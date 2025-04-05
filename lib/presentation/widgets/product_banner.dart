@@ -37,10 +37,20 @@ class ProductBanner extends StatelessWidget {
           Expanded(
             flex: 60,
             child: Align(
-              alignment: Alignment.centerRight,
-              child: CachedNetworkImage(
-                  fit: BoxFit.contain, imageUrl: product.thumbnail),
-            ),
+                alignment: Alignment.centerRight,
+                child: CachedNetworkImage(
+                  fit: BoxFit.contain,
+                  imageUrl: product.thumbnail,
+                  placeholder: (context, url) => const Center(
+                    child: CircularProgressIndicator(
+                      color: Colors.red,
+                    ),
+                  ),
+                  errorWidget: (context, url, error) => const Icon(
+                    Icons.error,
+                    color: Colors.red,
+                  ),
+                )),
           ),
         ],
       ),
