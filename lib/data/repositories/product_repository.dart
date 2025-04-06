@@ -2,8 +2,8 @@ import 'package:infinite_products/data/models/product/processed/product.dart';
 import 'package:infinite_products/data/services/product_service.dart';
 
 class ProductRepository {
-  ProductRepository({ProductService? pokemonService})
-      : _productService = pokemonService ?? ProductService();
+  ProductRepository({ProductService? productService})
+      : _productService = productService ?? ProductService();
 
   final ProductService _productService;
 
